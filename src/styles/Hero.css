@@ -1,0 +1,157 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fefbf6; 
+  color: #2b2b2b;
+}
+
+/* Hero Section */
+.hero {
+  padding: 0 172px; 
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 107px;
+  height: 28px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 16px;
+}
+
+.work-btn {
+  background-color: #fcddee;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 48px;
+  font-weight: bold;
+  color: #6b4f9c;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hero-content {
+    display: flex;
+    justify-self: space-between;
+}
+
+
+
+
+/* Hero Content
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+/* Avatar Section 
+.avatar-section {
+  text-align: center;
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.tag {
+  position: absolute;
+  background-color: #e9e7f9;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: #000;
+  border: 1px solid #b39ddb;
+}
+
+.tag-top {
+  top: 10px;
+  left: 100%;
+  transform: translateX(-50%);
+}
+
+.tag-bottom {
+  bottom: 10px;
+  left: -10%;
+  transform: translateX(-50%);
+}
+
+.credit {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+/* Intro Section
+.intro {
+  max-width: 520px;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.intro .name {
+  color: #9a7fdd;
+}
+
+.asterisk {
+  color: #acd9d6;
+  font-size: 2rem;
+  margin-left: 8px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #7287c3;
+  margin: 16px 0 8px 0;
+}
+
+.intro p {
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.resume-btn {
+  background-color: #fcddee;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #2b2b2b;
+}
+
+ */
