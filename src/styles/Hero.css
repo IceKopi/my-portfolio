@@ -39,6 +39,7 @@ body {
   color: #000;
   font-size: 16px;
   font-weight: 16px;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .work-btn {
@@ -293,10 +294,13 @@ body {
   margin: 0;
   font-weight: 600;
   line-height: 1.2;
+  font-family: "Sora", sans-serif !important;
 }
 
 .intro .name {
   color: #9a7fdd;
+  font-family: "Sora", sans-serif !important;
+
 }
 
 .asterisk {
@@ -310,6 +314,7 @@ body {
   color: #7287c3;
   margin: 16px 0 8px 0;
   font-weight: 500;
+  font-family: "Figtree", sans-serif !important;
 }
 
 .intro p {
@@ -317,6 +322,7 @@ body {
   margin-bottom: 24px;
   font-size: 1rem;
   color: #555;
+  font-family: "Manrope", sans-serif !important;
 }
 
 .resume-btn {
@@ -324,11 +330,13 @@ body {
   border: none;
   border-radius: 20px;
   padding: 12px 28px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   color: #2b2b2b;
   font-size: 16px;
   transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif !important;
+  
 }
 
 .resume-btn:hover {
