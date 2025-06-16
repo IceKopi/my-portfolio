@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../styles/Hero.css";
 import avatar from "../assets/avatar.png";
+import logo from "../assets/logo.png";
+import { ReactTyped } from "react-typed";
 
 export default function Hero() {
   const [selectedTag, setSelectedTag] = useState(null);
@@ -21,8 +23,10 @@ export default function Hero() {
   return (
     <section className="hero">
       <nav className="nav">
-        <div className="logo">LOGO</div>
-        
+        <div className="logo">
+             <img src={logo} alt="Logo" className="logo-img" />
+        </div>
+
         {/* Desktop Navigation */}
         <div className="nav-links">
           <a href="#">PROJECTS</a>
@@ -31,8 +35,8 @@ export default function Hero() {
         </div>
 
         {/* Mobile Hamburger */}
-        <div 
-          className={`hamburger ${mobileMenuOpen ? 'active' : ''}`} 
+        <div
+          className={`hamburger ${mobileMenuOpen ? "active" : ""}`}
           onClick={toggleMobileMenu}
         >
           <span></span>
@@ -42,17 +46,25 @@ export default function Hero() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
-        <a href="#" onClick={closeMobileMenu}>PROJECTS</a>
-        <a href="#" onClick={closeMobileMenu}>CONTACTS</a>
-        <button className="work-btn" onClick={closeMobileMenu}>Let's Work!</button>
+      <div className={`mobile-menu ${mobileMenuOpen ? "active" : ""}`}>
+        <a href="#" onClick={closeMobileMenu}>
+          PROJECTS
+        </a>
+        <a href="#" onClick={closeMobileMenu}>
+          CONTACTS
+        </a>
+        <button className="work-btn" onClick={closeMobileMenu}>
+          Let's Work!
+        </button>
       </div>
 
       <div className="hero-content">
         <div className="avatar-section">
-          <div 
-            className={`tag tag-top ${selectedTag === 'frontend' ? 'selected' : ''}`}
-            onClick={() => handleTagClick('frontend')}
+          <div
+            className={`tag tag-top ${
+              selectedTag === "frontend" ? "selected" : ""
+            }`}
+            onClick={() => handleTagClick("frontend")}
           >
             front-end
             <div className="selection-outline"></div>
@@ -66,9 +78,11 @@ export default function Hero() {
             <img src={avatar} alt="Avatar" className="avatar" />
           </div>
 
-          <div 
-            className={`tag tag-bottom ${selectedTag === 'uxui' ? 'selected' : ''}`}
-            onClick={() => handleTagClick('uxui')}
+          <div
+            className={`tag tag-bottom ${
+              selectedTag === "uxui" ? "selected" : ""
+            }`}
+            onClick={() => handleTagClick("uxui")}
           >
             ux/ui design
             <div className="selection-outline"></div>
@@ -77,7 +91,7 @@ export default function Hero() {
             <div className="handle bottom-left"></div>
             <div className="handle bottom-right"></div>
           </div>
-          
+
           <p className="credit">art by @sonderivation</p>
         </div>
 
@@ -86,7 +100,18 @@ export default function Hero() {
             Hello <span className="name">I'm Reign</span>
             <span className="asterisk">*</span>
           </h1>
-          <h2 className="subtitle">Open for opportunities</h2>
+          <h2 className="subtitle">
+            <ReactTyped
+              strings={[
+                "✧ Open for opportunities",
+                "✮ Front-End Developer",
+                "❀ UX/UI Designer",
+              ]}
+              typeSpeed={50}
+              backSpeed={30}
+              loop
+            />
+          </h2>
           <p>
             a curious creative who fell in love with building beautiful,
             human-centered digital spaces. I mix code and color to turn ideas

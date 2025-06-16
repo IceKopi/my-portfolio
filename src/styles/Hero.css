@@ -19,39 +19,53 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* So it stays on top */
+  background-color: #fff; /* or your theme color */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* optional */
+  border-radius: 15px;
 }
 
 .logo {
-  width: 107px;
-  height: 28px;
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 36px;
+  height: auto; /* keeps correct aspect ratio */
+  display: block;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 24px;
+  
 }
 
 .nav-links a {
   text-decoration: none;
   color: #000;
   font-size: 16px;
-  font-weight: 16px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
   font-family: "Montserrat", sans-serif !important;
 }
 
 .work-btn {
-  background-color: #fcddee;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 48px;
-  font-weight: bold;
-  color: #6b4f9c;
+  background-color: #f9c8e1;
+  border: 2px solid rgb(73, 35, 35);
+  border-radius: 999px;
+  padding: 12px 36px;
+  font-weight: 600;
   cursor: pointer;
+  color: #2b2b2b;
   font-size: 16px;
   transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 /* Hamburger Menu - Hidden by default */
@@ -116,7 +130,7 @@ body {
 }
 
 .mobile-menu a:hover {
-  color: #9a7fdd;
+  color: #f9c8e1;
 }
 
 .mobile-menu .work-btn {
@@ -125,7 +139,7 @@ body {
 }
 
 .work-btn:hover {
-  background-color: #f9c8e1;
+  background-color: #9a7fdd;
   transform: translateY(-2px);
 }
 
@@ -136,7 +150,7 @@ body {
   margin-top: 80px;
 }
 
-/* Avatar Section */
+/* Avatar Section - Reduced Size & Softened */
 .avatar-section {
   display: flex;
   flex-direction: column;
@@ -144,18 +158,22 @@ body {
   gap: 0.5rem;
   position: relative;
   flex-shrink: 0;
+   right: -5%;
 }
 
 .avatar-wrapper {
-  width: 500px;
-  height: 500px;
+  width: 350px; /* Reduced from 500px */
+  height: 350px; /* Reduced from 500px */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  margin-top: -100px;
+  margin-left: 0px;
+  /* Add soft shadow for gentler presence */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  
 }
 
 .avatar {
@@ -164,15 +182,19 @@ body {
   object-fit: cover;
   border-radius: 50%;
   z-index: 1;
+  /* Add subtle opacity for softer appearance */
+  opacity: 0.95;
+  /* Soft filter for gentler look */
+  filter: contrast(0.95) brightness(1.05);
 }
 
-/* Tag Base Styles */
+/* Tag Base Styles - Softened */
 .tag {
   background: #d0f0ef;
   color: #000;
   padding: 0.4rem 1rem;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Slightly smaller text */
   font-weight: 500;
   border: 2px solid #c26ce9;
   white-space: nowrap;
@@ -180,36 +202,39 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
+  /* Softer shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Tag Positioning */
+/* Tag Positioning - Adjusted for smaller avatar */
 .tag-top {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 20%;
-  right: -15%;
-  width: 190px;
-  height: 40px;
-  transform: translateY(-120%);
+  top: 25%; /* Adjusted positioning */
+  right: -25%; /* Closer to avatar */
+  width: 160px; /* Slightly smaller */
+  height: 36px; /* Slightly smaller */
+  transform: translateY(-110%);
   background-color: #b0e6e3;
-  font-size: 20px;
+  font-size: 18px; /* Reduced font size */
+  
 }
 
 .tag-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 40%;
-  left: -10%;
-  width: 190px;
-  height: 40px;
-  transform: translateY(120%);
+  bottom: 35%; /* Adjusted positioning */
+  left: -20%; /* Closer to avatar */
+  width: 160px; /* Slightly smaller */
+  height: 36px; /* Slightly smaller */
+  transform: translateY(110%);
   background-color: #f5f4d4;
-  font-size: 20px;
+  font-size: 18px; /* Reduced font size */
 }
 
-/* Selection outline system */
+/* Selection outline system - Softer colors */
 .selection-outline {
   position: absolute;
   pointer-events: none;
@@ -221,43 +246,46 @@ body {
   left: -4px;
   right: -4px;
   bottom: -4px;
+  /* Softer glow */
+  box-shadow: 0 0 12px rgba(198, 42, 255, 0.15);
 }
 
-/* Corner handles */
+/* Corner handles - Softer appearance */
 .handle {
   position: absolute;
-  width: 7px;
-  height: 7px;
+  width: 6px; /* Slightly smaller */
+  height: 6px; /* Slightly smaller */
   background: #A6D6D6;
   border: 1px solid #C62AFF;
-  border-radius: 1px;
+  border-radius: 2px; /* More rounded */
   opacity: 0;
   transition: opacity 0.15s ease;
   z-index: 6;
+  /* Soft shadow */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 /* Handle positions */
 .handle.top-left {
-  top: -8px;
-  left: -8px;
+  top: -7px;
+  left: -7px;
 }
 .handle.top-right {
-  top: -8px;
-  right: -8px;
+  top: -7px;
+  right: -7px;
 }
 .handle.bottom-left {
-  bottom: -8px;
-  left: -8px;
+  bottom: -7px;
+  left: -7px;
 }
 .handle.bottom-right {
-  bottom: -8px;
-  right: -8px;
+  bottom: -7px;
+  right: -7px;
 }
 
-/* Tag hover effects */
+/* Tag hover effects - Gentler */
 .tag:hover {
-  /* transform: translateY(-2px); */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Softer shadow */
 }
 
 .tag:hover .selection-outline,
@@ -265,7 +293,7 @@ body {
   opacity: 1;
 }
 
-/* Selected state */
+/* Selected state - Softer */
 .tag.selected .selection-outline,
 .tag.selected .handle {
   opacity: 1;
@@ -273,28 +301,34 @@ body {
 
 .tag.selected .selection-outline {
   border-color: #C62AFF;
-  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 0 16px rgba(198, 42, 255, 0.2); /* Softer glow */
 }
 
 .credit {
   margin-top: 0.5rem;
   font-size: 0.8rem;
-  color: #333;
+  color: #666; /* Softer text color */
   text-align: center;
+  opacity: 0.8; /* Subtle opacity */
 }
+
 
 /* Intro Section */
 .intro {
-  max-width: 520px;
+  max-width: 600px;
   flex: 1;
+  margin-top: 40px;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .intro h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin: 0;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
   font-family: "Sora", sans-serif !important;
+  margin-bottom: 0.25rem;
 }
 
 .intro .name {
@@ -305,30 +339,35 @@ body {
 
 .asterisk {
   color: #acd9d6;
-  font-size: 2rem;
+  font-size: 4rem;
   margin-left: 8px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #7287c3;
+  font-size: 2rem;
+  color: #6DA2B6;
   margin: 16px 0 8px 0;
   font-weight: 500;
   font-family: "Figtree", sans-serif !important;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-bottom: 1.25rem;
 }
 
 .intro p {
-  line-height: 1.6;
+  line-height: 1.75;
   margin-bottom: 24px;
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #3a3a3a;
   font-family: "Manrope", sans-serif !important;
+  margin-left: 0px;
+  margin-right: auto;
 }
 
 .resume-btn {
-  background-color: #fcddee;
-  border: none;
-  border-radius: 20px;
+  background-color: #9a7fdd;
+  border: 2px solid rgb(73, 35, 35);;
+  border-radius: 999px;
   padding: 12px 28px;
   font-weight: 600;
   cursor: pointer;
@@ -456,6 +495,7 @@ body {
     width: 320px;
     height: 320px;
     margin-top: -40px;
+    right: 0;
   }
   
   .tag-top, .tag-bottom {
@@ -505,9 +545,10 @@ body {
   }
   
   .intro {
-    text-align: center;
+    text-align: left;
     max-width: 100%;
     order: 2;
+    margin-top: 30px;
   }
   
   .avatar-section {
@@ -538,6 +579,7 @@ body {
     width: 280px;
     height: 280px;
     margin-top: 0;
+    right: 0%;
   }
   
   .tag-top, .tag-bottom {
@@ -582,6 +624,10 @@ body {
   
   .asterisk {
     font-size: 1.7rem;
+  }
+
+  .avatar-section{
+    right: 0;
   }
   
   .avatar-wrapper {
