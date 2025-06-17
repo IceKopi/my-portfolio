@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Hero.css";
-import avatar from "../assets/avatar.png";
+import avatar from "../assets/Avatar-1.png";
 import logo from "../assets/logo.png";
 import { ReactTyped } from "react-typed";
 
@@ -31,7 +31,7 @@ export default function Hero() {
         <div className="nav-links">
           <a href="#">PROJECTS</a>
           <a href="#">CONTACTS</a>
-          <button className="work-btn">Let's Work!</button>
+          <button className="work-btn">Hire me!</button>
         </div>
 
         {/* Mobile Hamburger */}
