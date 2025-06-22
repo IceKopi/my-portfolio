@@ -150,3 +150,33 @@
     font-size: 0.65rem;
   }
 }
+
+.techstack-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.techstack-scroll {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Adjust item size for horizontal layout */
+.techstack-item {
+  min-width: 100px;
+  flex-shrink: 0;
+  text-align: center;
+}

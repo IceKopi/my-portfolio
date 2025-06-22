@@ -16,13 +16,15 @@ const techStack = [
 const TechStack = () => {
   return (
     <section className="techstack-section">
-      <div className="techstack-grid">
-        {techStack.map((tech, index) => (
-          <div className="techstack-item" key={index}>
-            <div className="techstack-icon">{tech.icon}</div>
-            <p className="techstack-name">{tech.name}</p>
-          </div>
-        ))}
+      <div className="techstack-scroll-wrapper">
+        <div className="techstack-scroll">
+          {[...techStack, ...techStack].map((tech, index) => (
+            <div className="techstack-item" key={index}>
+              <div className="techstack-icon">{tech.icon}</div>
+              <p className="techstack-name">{tech.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

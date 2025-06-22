@@ -3,6 +3,7 @@ import "../styles/Body.css";
 import Card from "./Card"; 
 import greenBg from "../assets/bg/green-bg.png";
 import blueBg from "../assets/bg/blue-bg.png";
+import orangeBg from "../assets/bg/orange1-bg.png";
 import stresscheck from "../assets/stress-check-mockup.png";
 
 
@@ -26,10 +27,10 @@ const Body = () => {
       />
 
       <Card
-        title="Mendiola"
+        title="Edibly"
         description="A curious creative with a passion for code and color, crafting digital experiences."
         imageSrc={stresscheck}
-        bgImage={blueBg}
+        bgImage={orangeBg}
         onClick={handleClick}
       />
     </section>
