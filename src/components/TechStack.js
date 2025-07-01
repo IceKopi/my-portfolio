@@ -18,7 +18,7 @@ const TechStack = () => {
     <section className="techstack-section">
       <div className="techstack-scroll-wrapper">
         <div className="techstack-scroll">
-          {[...techStack, ...techStack].map((tech, index) => (
+          {[...techStack, ...techStack, ...techStack].map((tech, index) => (
             <div className="techstack-item" key={index}>
               <div className="techstack-icon">{tech.icon}</div>
               <p className="techstack-name">{tech.name}</p>

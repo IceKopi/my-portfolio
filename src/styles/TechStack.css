@@ -7,7 +7,7 @@
 }
 
 .techstack-title {
-  color: #7C3AED;
+  color: #7c3aed;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -17,7 +17,7 @@
 }
 
 .techstack-title::after {
-  content: '✨';
+  content: "✨";
   position: absolute;
   right: -1.5rem;
   top: -0.2rem;
@@ -26,18 +26,15 @@
 }
 
 @keyframes sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
-}
-
-.techstack-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
 }
 
 .techstack-item {
@@ -49,12 +46,14 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid rgba(196, 181, 253, 0.2);
-  box-shadow: 
-    0 2px 5px rgba(124, 58, 237, 0.05),
+  box-shadow: 0 2px 5px rgba(124, 58, 237, 0.05),
     0 1px 3px rgba(124, 58, 237, 0.1);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.6s ease both;
+  min-width: 100px;
+  flex-shrink: 0;
+  text-align: center;
 }
 
 @keyframes fadeInUp {
@@ -70,15 +69,14 @@
 
 .techstack-item:hover {
   transform: translateY(-6px) scale(1.07);
-  box-shadow: 
-    0 10px 20px rgba(124, 58, 237, 0.15),
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15),
     0 6px 8px rgba(124, 58, 237, 0.1);
   border-color: rgba(196, 181, 253, 0.4);
 }
 
 .techstack-icon {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, #A855F7 0%, #C084FC 50%, #E879F9 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 50%, #e879f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -94,7 +92,7 @@
 }
 
 .techstack-name {
-  color: #6B46C1;
+  color: #6b46c1;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -104,8 +102,8 @@
 }
 
 /* Decorative elements */
-.techstack-item:nth-child(3n+1)::after {
-  content: '♡';
+.techstack-item:nth-child(3n + 1)::after {
+  content: "♡";
   position: absolute;
   top: 4px;
   right: 6px;
@@ -113,8 +111,8 @@
   font-size: 0.6rem;
 }
 
-.techstack-item:nth-child(3n+2)::after {
-  content: '★';
+.techstack-item:nth-child(3n + 2)::after {
+  content: "★";
   position: absolute;
   top: 4px;
   right: 6px;
@@ -122,8 +120,8 @@
   font-size: 0.6rem;
 }
 
-.techstack-item:nth-child(3n+3)::after {
-  content: '◆';
+.techstack-item:nth-child(3n + 3)::after {
+  content: "◆";
   position: absolute;
   top: 4px;
   right: 6px;
@@ -131,15 +129,55 @@
   font-size: 0.6rem;
 }
 
-/* Responsive */
+.techstack-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+}
+
+.techstack-scroll {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll-horizontal 15s linear infinite;
+}
+
+.techstack-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
   .techstack-title {
     font-size: 1.1rem;
   }
 
-  .techstack-grid {
-    gap: 0.6rem;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  .techstack-item {
+    min-width: 80px;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .techstack-scroll {
+    gap: 1rem;
+    animation-duration: 12s;
   }
 
   .techstack-icon {
@@ -151,32 +189,22 @@
   }
 }
 
-.techstack-scroll-wrapper {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  padding: 1rem 0;
-}
-
-.techstack-scroll {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  animation: scroll-horizontal 20s linear infinite;
-}
-
-@keyframes scroll-horizontal {
-  0% {
-    transform: translateX(0%);
+@media (max-width: 480px) {
+  .techstack-item {
+    min-width: 70px;
+    padding: 0.5rem 0.3rem;
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-/* Adjust item size for horizontal layout */
-.techstack-item {
-  min-width: 100px;
-  flex-shrink: 0;
-  text-align: center;
+  .techstack-scroll {
+    gap: 0.8rem;
+    animation-duration: 10s;
+  }
+
+  .techstack-icon {
+    font-size: 1.3rem;
+  }
+
+  .techstack-name {
+    font-size: 0.6rem;
+  }
 }

@@ -33,6 +33,15 @@ const Body = () => {
         bgImage={orangeBg}
         onClick={handleClick}
       />
+
+       <Card
+        title="Mounsure"
+        description="A curious creative with a passion for code and color, crafting digital experiences."
+        imageSrc={stresscheck}
+        bgImage={blueBg}
+        onClick={handleClick}
+      />
+
     </section>
   );
 };
