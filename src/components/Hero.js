@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Hero.css";
-import avatar from "../assets/Avatar-1.png";
+import avatar from "../assets/profile.png";
 import logo from "../assets/logo.png";
 import { ReactTyped } from "react-typed";
 
@@ -24,7 +24,7 @@ export default function Hero() {
     <section className="hero">
       <nav className="nav">
         <div className="logo">
-             <img src={logo} alt="Logo" className="logo-img" />
+          <img src={logo} alt="Logo" className="logo-img" />
         </div>
 
         {/* Desktop Navigation */}
@@ -91,8 +91,6 @@ export default function Hero() {
             <div className="handle bottom-left"></div>
             <div className="handle bottom-right"></div>
           </div>
-
-          <p className="credit">art by @sonderivation</p>
         </div>
 
         <div className="intro">
@@ -117,7 +115,20 @@ export default function Hero() {
             human-centered digital spaces. I mix code and color to turn ideas
             into experiences.
           </p>
-          <button className="resume-btn">View Resume</button>
+          <button
+            className="resume-btn"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href =
+                "https://drive.google.com/uc?export=download&id=18z7XB9qHh8NjD-6KO5Cece1AC3o3f-7G";
+              link.download = "Pantonia-Reign-Resume.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
+            View Resume
+          </button>
         </div>
       </div>
     </section>

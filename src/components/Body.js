@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Body.css";
-import Card from "./Card"; 
+import Card from "./Card";
 import greenBg from "../assets/bg/green-bg.png";
 import blueBg from "../assets/bg/blue-bg.png";
 import orangeBg from "../assets/bg/orange1-bg.png";
 import stresscheck from "../assets/stress-check-mockup.png";
 
-
 const Body = () => {
+  const [activeTab, setActiveTab] = useState("design");
+
+  const designProjects = [
+    {
+      title: "CoachFit",
+      description: "A bold, high-contrast fitness coach UI landing page designed to inspire action",
+      imageSrc: stresscheck,
+      bgImage: blueBg,
+      techStack: ["Figma"],
+      projectId: "coachfit",
+    },
+  ];
+
+  const developmentProjects = [
+    {
+      title: "StressCheck",
+      description: "A stress assessment app with charts, data, and authentication.",
+      imageSrc: stresscheck,
+      bgImage: greenBg,
+      techStack: ["html5", "css", "Monggodb", "python"],
+      projectId: "stresscheck",
+    },
+    {
+      title: "Monsour",
+      description: "Food management app for tracking inventory and expiry dates.",
+      imageSrc: stresscheck,
+      bgImage: orangeBg,
+      techStack: ["Vue", "Bootstrap", "local storage"],
+      projectId: "edibly",
+    },
+  ];
+
   const handleClick = () => {
     alert("Card clicked!");
   };
@@ -15,33 +46,37 @@ const Body = () => {
   return (
     <section className="body-section">
       <div className="project-title">
-        <p className="title">Project Showcase</p>
+        <h2 className="subtitle">My Projects</h2>
+        <div className="tabs-container">
+          <button
+            className={`tab-btn ${activeTab === "design" ? "active" : ""}`}
+            onClick={() => setActiveTab("design")}
+          >
+            Designs
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "development" ? "active" : ""}`}
+            onClick={() => setActiveTab("development")}
+          >
+            Development
+          </button>
+        </div>
       </div>
 
-      <Card
-        title="StressCheck"
-        description="A curious creative who fell in love with building beautiful, human-centered digital spaces. I mix code and color to turn ideas into experiences."
-        imageSrc={stresscheck}
-        bgImage={greenBg}
-        onClick={handleClick}
-      />
-
-      <Card
-        title="Edibly"
-        description="A curious creative with a passion for code and color, crafting digital experiences."
-        imageSrc={stresscheck}
-        bgImage={orangeBg}
-        onClick={handleClick}
-      />
-
-       <Card
-        title="Mounsure"
-        description="A curious creative with a passion for code and color, crafting digital experiences."
-        imageSrc={stresscheck}
-        bgImage={blueBg}
-        onClick={handleClick}
-      />
-
+      <div className="cards-container">
+        {(activeTab === "design" ? designProjects : developmentProjects).map((project) => (
+          <Card
+            key={project.projectId}
+            title={project.title}
+            description={project.description}
+            imageSrc={project.imageSrc}
+            bgImage={project.bgImage}
+            onClick={handleClick}
+            techStack={project.techStack}
+            projectId={project.projectId}
+          />
+        ))}
+      </div>
     </section>
   );
 };
