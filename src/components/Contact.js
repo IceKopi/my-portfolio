@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section className="contact-section">
+    <section id="contacts" section className="contact-section">
       <div className="contact-content">
         <h2>Let’s connect</h2>
         <p>Get in touch for opportunities or just to say hi! 👋</p>
