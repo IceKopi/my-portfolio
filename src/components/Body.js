@@ -5,6 +5,7 @@ import greenBg from "../assets/bg/green-bg.png";
 import blueBg from "../assets/bg/blue-bg.png";
 import orangeBg from "../assets/bg/orange1-bg.png";
 import stresscheck from "../assets/stress-check-mockup.png";
+import coachfit from "../assets/coachfit-mockup.png";
 
 const Body = () => {
   const [activeTab, setActiveTab] = useState("design");
@@ -13,8 +14,8 @@ const Body = () => {
     {
       title: "CoachFit",
       description: "A bold, high-contrast fitness coach UI landing page designed to inspire action",
-      imageSrc: stresscheck,
-      bgImage: blueBg,
+      imageSrc: coachfit,
+      bgImage: orangeBg,
       techStack: ["Figma"],
       projectId: "coachfit",
     },
@@ -44,7 +45,7 @@ const Body = () => {
   };
 
   return (
-    <section className="body-section">
+    <section id="projects" section className="body-section">
       <div className="project-title">
         <h2 className="subtitle">My Projects</h2>
         <div className="tabs-container">

@@ -29,8 +29,8 @@ export default function Hero() {
 
         {/* Desktop Navigation */}
         <div className="nav-links">
-          <a href="#">PROJECTS</a>
-          <a href="#">CONTACTS</a>
+          <a href="#projects">PROJECTS</a>
+          <a href="#contacts">CONTACTS</a>
           <button className="work-btn">Hire me!</button>
         </div>
 
